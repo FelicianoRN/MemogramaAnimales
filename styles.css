@@ -1,0 +1,62 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+h1 {
+  margin: 20px 0;
+}
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(6, 100px); /* 4 columnas */
+  gap: 15px; /* Espacio entre las cartas */
+  justify-content: center;
+  margin: 20px auto;
+}
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  /* No cambiar la posición al ser adivinada */
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+.card.flipped, .card.guessed {
+  background-color: #fff;
+  color: #000;
+  cursor: default; /* Impide hacer clic en cartas adivinadas */
+}
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+#timer {
+  font-size: 20px;
+  margin-top: 10px;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #0056b3;
+}
